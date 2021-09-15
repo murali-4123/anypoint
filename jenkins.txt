@@ -1,14 +1,12 @@
 pipeline {
-  agent {
-    label 'bat-builder'
-  }
+  agent any
 
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
 
   environment {
-    DEPLOY_CREDS = credentials('Murali-lucky')
+    DEPLOY_CREDS = credentials('Mounika')
     MULE_VERSION = '4.3.0'
     BG = "1Platform\\Public\\CI-CD Demo"
     WORKER = "Micro"
